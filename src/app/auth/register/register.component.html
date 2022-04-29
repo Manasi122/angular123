@@ -1,0 +1,73 @@
+<h1>Login Form</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <mat-card-content>
+    <mat-form-field appearance="fill">
+      <mat-label>First Name: </mat-label>
+      <input formControlName="fname" matInput type="text" name="fname">
+    </mat-form-field>
+    <div *ngIf="registerForm.controls['fname'].invalid">
+      <div *ngIf="registerForm.controls['fname'].errors">Please enter first name</div>
+  </div>
+  </mat-card-content> 
+    
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Last Name: </mat-label>
+        <input formControlName="lname" matInput type="text" name="lname">
+      </mat-form-field>
+      <div *ngIf="registerForm.controls['fname'].invalid">
+        <div *ngIf="registerForm.controls['fname'].errors">Please enter last name</div>
+    </div>
+    </mat-card-content>   
+    
+    
+    <mat-card-content>
+      <mat-form-field appearance="fill">
+        <mat-label>Email Address: </mat-label>
+        <input formControlName="email" matInput type="email" name="email">
+      </mat-form-field>
+      <div *ngIf="registerForm.controls['fname'].invalid">
+        <div *ngIf="registerForm.controls['fname'].errors">Enter correct email address</div>
+    </div>
+    </mat-card-content>  
+    
+    
+    
+    <mat-card>
+      <mat-card-subtitle>
+      <mat-label>Gender: </mat-label>
+        <mat-radio-group formControlName="gender" labelPosition="after" matInput aria-label="Select Gender: ">
+            <mat-radio-button value="Male">Male</mat-radio-button>
+            <mat-radio-button value="Female">Female</mat-radio-button>
+            <mat-radio-button value="Other">Other</mat-radio-button>
+        </mat-radio-group>
+      </mat-card-subtitle>
+    </mat-card>    
+    
+    <mat-card>
+    <mat-card-subtitle>    
+      <mat-label>Country: </mat-label>
+        <mat-checkbox formControlName="country" value="India">India</mat-checkbox>
+        <mat-checkbox formControlName="country" value="Canada">Canada</mat-checkbox>
+        <mat-checkbox formControlName="country" value="Germany">Germany</mat-checkbox>
+        <mat-checkbox formControlName="country" value="Italy">Italy</mat-checkbox> <br> 
+      </mat-card-subtitle>      
+    </mat-card>   
+
+
+    <mat-form-field appearance="fill">
+        <mat-label>Mobile Number: </mat-label>
+        <input formControlName="mobno" matInput type="number"> 
+      </mat-form-field>
+      <div *ngIf="registerForm.controls['fname'].invalid">
+        <div *ngIf="registerForm.controls['fname'].errors">Enter correct mobile no.</div>
+    </div>
+
+
+      <mat-card-actions>
+        <button mat-flat-button color="accent" (click)="register()" [disabled]="!registerForm.valid" type="submit" >Submit</button>
+      </mat-card-actions>
+    
+  
+  </form>

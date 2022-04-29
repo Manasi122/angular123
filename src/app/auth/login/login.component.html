@@ -1,0 +1,14 @@
+<br><br><h1 mat-stroked-button color="accent" align="center">Login Form</h1>
+<form style="margin-left:400px">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Username: </mat-label>
+      <input  matInput type="text" [(ngModel)]="username" name="username">
+    </mat-form-field><br>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Password: </mat-label>
+      <input  matInput type="text" [(ngModel)]="pwd" name="pwd">
+    </mat-form-field><br>
+    <button mat-flat-button color="primary" (click)="login()" type="submit" >LOGIN</button>
+  </form>
+
+<router-outlet></router-outlet>

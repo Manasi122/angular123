@@ -1,0 +1,12 @@
+<p class="mat-display-1">Services!</p>
+<ul>
+    <li *ngFor="let student of students">
+        {{ student.name }}
+    </li>
+</ul>
+<ul>
+    <li *ngFor="let test of tests">
+        {{ test.name| json }}
+    </li>
+</ul>
+<!-- <button type="submit" (click)="registerData()" class="btn btn-primary">Submit </button> -->
